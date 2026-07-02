@@ -19,4 +19,13 @@ public class LRUCache<K, V> {
     }
 
 
+    public Node<K, V> get(K key) {
+
+        return null;
+    }
+
+    public void put(Node<K, V> node) {
+
+    }
+
 }
