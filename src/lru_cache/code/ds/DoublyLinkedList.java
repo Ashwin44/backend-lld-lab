@@ -30,7 +30,7 @@ public class DoublyLinkedList<K,V> {
         node.setNext(next);
     }
 
-    public void removeLast() {
+    public Node<K, V> removeLast() {
 
         if(tail.getPrev() != head) {
             Node lastNode = tail.getPrev();
@@ -39,7 +39,9 @@ public class DoublyLinkedList<K,V> {
             tail.setPrev(prevNode);
             lastNode.setPrev(null);
             lastNode.setNext(null);
+            return lastNode;
         }
+        return null;
     }
 
     public void moveToFront(Node<K, V> node) {
