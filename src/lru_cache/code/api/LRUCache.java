@@ -45,17 +45,17 @@ public class LRUCache<K, V> {
        - Create new node
        - Add to front of list
        - Add to map */
-    public synchronized void put(Node<K, V> node) {
+    public synchronized void put(K key, V value) {
 
-        if(!(map == null || map.isEmpty())) {
-            K key = node.getKey();
+        if(! ( map == null ) ) {
 
             if(map.containsKey(key)) {
                 Node existingNode  = map.get(key);
-                existingNode.setValue(node.getValue());
+                existingNode.setValue(value);
                 list.moveToFront(existingNode);
             } else {
                 // new node
+                Node<K, V> node = new Node<>(key, value);
                 node.setNext(null);
                 node.setPrev(null);
 

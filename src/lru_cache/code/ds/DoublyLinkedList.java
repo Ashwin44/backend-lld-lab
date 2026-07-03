@@ -9,9 +9,7 @@ public class DoublyLinkedList<K,V> {
         head = new Node<>(null, null);
         tail = new Node<>(null, null);
         head.setNext(tail);
-        head.setPrev(null);
         tail.setPrev(head);
-        tail.setNext(null);
     }
 
     public Node<K, V> getHead() {
